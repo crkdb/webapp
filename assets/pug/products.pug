@@ -1,0 +1,56 @@
+doctype html
+html(lang="en")
+  head 
+    meta(charset="utf-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    link(rel="icon" type="image/x-icon" href="images/favicon.png")
+
+    link(rel="stylesheet", href="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.css")
+    link(rel="stylesheet", href="styles.css")
+
+    title Cookie Run Kingdom: Products
+
+  body
+    .ui.container 
+      h1 Products
+
+      table.ui.selectable.table
+        thead 
+          tr 
+            th Building 
+            th Product 
+            th Materials
+            th Total Raw Materials
+            th Time
+            th Units per Day
+        each building in productBuildings
+          tbody 
+            each item, itemIndex in building.items
+              if itemIndex === 0
+                tr 
+                  td.top.aligned(rowspan=building.items.length+1)
+                    b #{building.name}
+                    img.ui.image.building-image(src=building.img)
+              tr
+                td
+                  h4.ui.image.header 
+                    img.ui.mini.image(src=item.img)
+                    .content #{item.name}
+                td
+                  each material in item.materials
+                    .material-image
+                      img.ui.mini.image(src=material.img)
+                      .item-label #{material.qty}
+                td 
+                  each material in item.totals
+                    .material-image
+                      img.ui.mini.image(src=material.img)
+                      .item-label #{material.qty}
+                td #{item.time}
+                td #{item.perDay}
+
+    script(src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js", integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=", crossorigin="anonymous")
+    script(src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js", integrity="sha256-CgSoWC9w5wNmI1aN8dIMK+6DPelUEtvDr+Bc2m/0Nx8=", crossorigin="anonymous")
+    script(src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js", integrity="sha256-ZSnrWNaPzGe8v25yP0S6YaMaDLMTDHC+4mHTw0xydEk=", crossorigin="anonymous")
+    script(src="scripts.js")
+
