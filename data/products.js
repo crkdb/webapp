@@ -1,5 +1,6 @@
 const fs = require("fs");
 const path = require("path");
+const commaNumber = require('comma-number');
 const { parseDuration } = require('./utils');
 const { lookupMaterial } = require('./materials')
 
@@ -63,15 +64,22 @@ buildings.forEach(building => {
     const totalRawMaterials = getTotalRawMaterials(item.materials)
     item.totals = Object.keys(totalRawMaterials).map(name => {
       const material = lookupMaterial(name);
+      const qty = totalRawMaterials[name];
       return {
         id: material.id,
         name: name,
         img: material.img,
-        qty: totalRawMaterials[name],
+        qty,
+        costPerUnit: material.costPerUnit
       };
     }).sort((a, b) => {
       return a.id - b.id
     });
+
+
+    item.totalCost = commaNumber(item.totals.reduce((prev, material) => {
+      return prev + (material.qty * material.costPerUnit);
+    }, 0));
   });
 });
 

@@ -21,6 +21,7 @@ html(lang="en")
             th Product 
             th Materials
             th Total Raw Materials
+            th Total Cost
             th Time
             th Units per Day
         each building in productBuildings
@@ -46,6 +47,10 @@ html(lang="en")
                     .material-image
                       img.ui.mini.image(src=material.img)
                       .item-label #{material.qty}
+                td
+                  .material-image
+                    img.ui.mini.image(src="/images/coin.png")
+                    .item-label #{item.totalCost}
                 td #{item.time}
                 td #{item.perDay}
 

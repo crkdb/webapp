@@ -20,19 +20,22 @@ lines.forEach(line => {
           id: index++,
           name: fields[2],
           img: "",
+          costPerUnit: 0,
           sets: []
         }
       };
       break;
     case 5:
       // [Roll Cake Wood, /images/material/wood_1.png, 3, 30s, 30]
-      if (building.res.sets.length === 0) {
-        building.res.img = fields[1];
-      }
       const qty = Number.parseInt(fields[2]);
       const timeInSec = parseDuration(fields[3], 's');
       const timePerUnit = timeInSec / qty;
       const dayInSec = 24 * 60 * 60;
+      const cost = Number.parseInt(fields[4]);
+      if (building.res.sets.length === 0) {
+        building.res.img = fields[1];
+        building.res.costPerUnit = Math.round(cost / qty);
+      }
       building.res.sets.push({
         name: fields[0],
         img: fields[1],
@@ -40,7 +43,7 @@ lines.forEach(line => {
         time: fields[3],
         timePerUnit: formatTime(timePerUnit),
         unitsPerDay: qty * Math.floor(dayInSec / timeInSec),
-        cost: Number.parseInt(fields[4])
+        cost
       });
       if (building.res.sets.length === 3) {
         buildings.push(building);
