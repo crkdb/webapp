@@ -76,7 +76,6 @@ buildings.forEach(building => {
       return a.id - b.id
     });
 
-
     item.totalCost = commaNumber(item.totals.reduce((prev, material) => {
       return prev + (material.qty * material.costPerUnit);
     }, 0));
@@ -107,7 +106,7 @@ function getTotalRawMaterials(resources) {
       addToMap(total, material.name, resource.qty)
     } else if (product) {
       const subTotals = getTotalRawMaterials(product.materials);
-      Object.keys(subTotals).forEach(name => addToMap(total, name, subTotals[name]));
+      Object.keys(subTotals).forEach(name => addToMap(total, name, resource.qty * subTotals[name]));
     }
   });
   return total;
