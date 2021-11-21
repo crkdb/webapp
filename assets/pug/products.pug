@@ -39,12 +39,12 @@ html(lang="en")
                     .content #{item.name}
                 td
                   each material in item.materials
-                    .material-image
+                    .material-image(data-tooltip=material.name)
                       img.ui.mini.image(src=material.img)
                       .item-label #{material.qty}
                 td 
                   each material in item.totals
-                    .material-image
+                    .material-image(data-tooltip=material.name)
                       img.ui.mini.image(src=material.img)
                       .item-label #{material.qty}
                 td
