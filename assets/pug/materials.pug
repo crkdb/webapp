@@ -36,9 +36,18 @@ html(lang="en")
                   h4.ui.image.header 
                     img.ui.mini.image(src=set.img)
                     .content #{set.name}
-                td x#{set.qty}
-                td #{set.time}
-                td #{set.timePerUnit}
+                td 
+                  .material-image
+                    img.ui.mini.image(src=building.res.img)
+                    .item-label x#{set.qty}
+                td
+                  .material-image
+                    img.ui.mini.image(src="/images/clock.png")
+                    .item-label #{set.time}
+                td
+                  .material-image
+                    img.ui.mini.image(src="/images/clock.png")
+                    .item-label #{set.timePerUnit}
                 td #{set.unitsPerDay}
 
     script(src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js", integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=", crossorigin="anonymous")
