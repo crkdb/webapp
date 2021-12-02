@@ -5,11 +5,10 @@ const concat = require("gulp-concat");
 const newer = require("gulp-newer");
 const imagemin = require("gulp-imagemin");
 const pug = require("gulp-pug");
-const cleanCSS = require("gulp-clean-css");
 const less = require('gulp-less');
 const minify = require("gulp-minify");
 
-const pugData = require("./data");
+const data2 = require('./data2')
 const outputDir = "./public/";
 const debugOutputDir = "./debug/";
 
@@ -19,9 +18,10 @@ function clean() {
 }
 
 function debugData(cb) {
-  fs.mkdirSync(debugOutputDir);
-  fs.writeFileSync(debugOutputDir+'pugData.json', JSON.stringify(pugData, null, 2));
-  cb();
+  fs.mkdir(debugOutputDir, () => {
+    fs.writeFileSync(debugOutputDir + 'data2.json', JSON.stringify(data2, null, 2));
+    cb();
+  });
 }
 
 // Optimize Images
@@ -48,10 +48,10 @@ function images() {
 
 // HTML task
 function html(done) {
-  const tasks =  [
+  const tasks = [
     "index.pug",
     "materials.pug",
-    "products.pug"
+    "goods.pug",
   ].map(page => {
     function htmlSubTask() {
       return src(["assets/pug/mixins/*.pug", "assets/pug/" + page])
@@ -59,8 +59,7 @@ function html(done) {
         .pipe(dest(debugOutputDir))
         .pipe(
           pug({
-            pretty: true,
-            locals: pugData,
+            locals: data2,
           })
         )
         .pipe(dest(outputDir));
@@ -72,7 +71,8 @@ function html(done) {
 
   return series(...tasks, seriesDone => {
     fs.mkdir(debugOutputDir, () => {
-      fs.writeFile(debugOutputDir+'pugData.json', JSON.stringify(pugData, null, 2), () => {
+      fs.mkdir(debugOutputDir, () => {
+        fs.writeFileSync(debugOutputDir + 'data2.json', JSON.stringify(data2, null, 2));
         seriesDone();
         done();
       });
@@ -99,16 +99,23 @@ function js() {
     .pipe(dest(outputDir));
 }
 
+function data() {
+  return src("assets/data/**/*")
+    .pipe(dest(`${outputDir}data/`));
+}
+
 function watchTask() {
+  watch("assets/data/**/*", data);
   watch("assets/pug/**/*", html);
   watch("assets/less/**/*", css);
   watch("assets/js/**/*", js);
   watch("assets/images/**/*", images);
 }
 
-const build = series(clean, parallel(images, html, css, js));
+const build = series(clean, parallel(data, images, html, css, js));
 
 exports.clean = clean;
+exports.data = data;
 exports.images = images;
 exports.html = html;
 exports.css = css;

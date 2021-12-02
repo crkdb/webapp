@@ -1,5 +1,23 @@
+const fs = require('fs');
 const parseDuration = require('parse-duration');
 
+/**
+ * @param {string} file 
+ * @returns {string[][]}
+ */
+ function parseTSV(file) {
+  const data = fs.readFileSync(file, { encoding: 'utf-8' });
+  const lines = data.split(/\s*\n\s*/);
+  // remove headers line
+  lines.shift()
+  // split tabs and trim spaces
+  return lines.map(line => line.split(/\t/).map(field => field.trim()));
+}
+
+/**
+ * @param {Number} seconds 
+ * @returns {string}
+ */
 function formatTime(seconds) {
   let time = seconds;
 
@@ -25,5 +43,5 @@ function formatTime(seconds) {
   return result;
 }
 
-exports.parseDuration = parseDuration;
+exports.parseTSV = parseTSV;
 exports.formatTime = formatTime;
