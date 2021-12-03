@@ -83,7 +83,7 @@ const products = parseTSV(`${__dirname}${sep}products.tsv`).map(fields => {
   return new Product(fields, buildings);
 });
 
-// push materials and products into building.resources
+// push materials and products into building.[materials/products]
 buildings.forEach(building => {
   building.materials = materials.filter(material => building.id === material.buildingID);
   building.products = products.filter(product => building.id === product.buildingID);
@@ -94,6 +94,7 @@ products.forEach(product => {
   product.ingredients.forEach(ingredient => {
     const material = materials.find(m => m.single === ingredient.name);
     if (material) {
+      ingredient.id = material.id;
       ingredient.image = material.image;
     }
     const product = products.find(p => p.name === ingredient.name);
@@ -108,6 +109,9 @@ products.forEach(product => {
 // calc total cost of product
 products.forEach(product => {
   product.baseMaterials = getBaseMaterialsRecurse(product);
+  product.baseMaterials.sort((a, b) => {
+    return a.id - b.id;
+  });
   product.totalCost = product.baseMaterials.reduce((prev, bm) => {
     let cost;
     materials.forEach(m => {
@@ -134,8 +138,8 @@ function getBaseMaterialsRecurse(ingredient) {
       }
     });
   } else {
-    const {quantity, name, image} = ingredient;
-    total.push({ quantity, name, image });
+    const {id, quantity, name, image} = ingredient;
+    total.push({ id, quantity, name, image });
   }
 
   const baseMaterials = [];
@@ -146,8 +150,8 @@ function getBaseMaterialsRecurse(ingredient) {
         return;
       }
     }
-    const {quantity, name, image} = m;
-    baseMaterials.push({ quantity, name, image });
+    const {id, quantity, name, image} = m;
+    baseMaterials.push({ id, quantity, name, image });
   });
   return baseMaterials;
 }
