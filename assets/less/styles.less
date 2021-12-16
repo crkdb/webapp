@@ -7,7 +7,7 @@ body {
 .ui.xmini.images .image,
 .ui.xmini.images img,
 .ui.xmini.images svg {
-  width: 20px; 
+  width: 20px;
 }
 
 // Indented item
@@ -20,10 +20,14 @@ body {
 // Table
 .ui.sortable.table {
   thead {
-    th {
+    th.no-sort {
+      cursor: default;
+    }
+
+    th:not(.no-sort) {
       &.tablesorter-header {
-        background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==);
-        background-repeat: no-repeat;
+        background-image   : url(data:image/gif;base64,R0lGODlhFQAJAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==);
+        background-repeat  : no-repeat;
         background-position: center right;
       }
 
@@ -35,5 +39,9 @@ body {
         background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
       }
     }
+  }
+
+  tr.sort-disabled {
+    opacity: 0.5;
   }
 }

@@ -158,4 +158,4 @@ exports.buildings = buildings;
 exports.materials = materials;
 exports.products = products;
 exports.getImage = getImage;
-exports.materialNames = ['Roll Cake', 'Jellybean', 'Sugar Cube', 'Biscuit Flour', 'Jellyberry', 'Cotton Candy Wool'];
+exports.materialNames = ['Roll Cake', 'Jellybean', 'Sugar Cube', 'Biscuit Flour', 'Jellyberry', 'Milk', 'Cotton Candy Wool'];

@@ -19,19 +19,24 @@ html(lang="en")
       table.ui.sortable.celled.selectable.table
         thead 
           tr 
+            th.no-sort
             th #
             th Building
             th Goods n' Ingredients
-            th(data-sortInitialOrder="desc")
+            th(data-sortInitialOrder="desc").sorter-digit
               img.ui.xmini.image(src="/images/coin.png")
             each name in materialNames
-              th(data-sortInitialOrder="desc")
+              th(data-sortInitialOrder="desc").sorter-digit
                 img.ui.xmini.image(src=getImage(name)) 
         each building, buildingIndex in buildings
           if building.products
             each item, itemIndex in building.products
               //- product name
               tr.top.aligned
+                td 
+                  .ui.fitted.toggle.checkbox
+                    input(type="checkbox", checked)
+                    label
                 td #{buildingIndex}.#{itemIndex}
                 td #{building.name}
                 td(data-text=item.name)
