@@ -86,17 +86,14 @@ buildings.forEach(building => {
   building.products = products.filter(product => building.id === product.buildingID);
 });
 
-// grab the image for the product ingredients
 products.forEach(product => {
   product.ingredients.forEach(ingredient => {
     const material = materials.find(m => m.single === ingredient.name);
     if (material) {
       ingredient.id = material.id;
-      ingredient.image = material.image;
     }
     const product = products.find(p => p.name === ingredient.name);
     if (product) {
-      ingredient.image = product.image;
       ingredient.ingredients = product.ingredients;
     }
   });
@@ -105,11 +102,15 @@ products.forEach(product => {
 // calc the base materials for each product
 // calc total cost of product
 products.forEach(product => {
-  product.baseMaterials = getBaseMaterialsRecurse(product);
-  product.baseMaterials.sort((a, b) => {
-    return a.id - b.id;
-  });
-  product.totalCost = product.baseMaterials.reduce((prev, bm) => {
+  const baseMaterials = getBaseMaterialsRecurse(product);
+
+  product.rawMaterials = baseMaterials.reduce((prev, bm) => {
+    return Object.assign(prev, {
+      [bm.name]: bm.quantity
+    });
+  }, {})
+
+  product.totalCost = baseMaterials.reduce((prev, bm) => {
     let cost;
     materials.forEach(m => {
       if (m.single === bm.name) {
@@ -153,7 +154,8 @@ function getBaseMaterialsRecurse(ingredient) {
   return baseMaterials;
 }
 
-exports.getImage = getImage;
 exports.buildings = buildings;
 exports.materials = materials;
 exports.products = products;
+exports.getImage = getImage;
+exports.materialNames = ['Roll Cake', 'Jellybean', 'Sugar Cube', 'Biscuit Flour', 'Jellyberry', 'Cotton Candy Wool'];

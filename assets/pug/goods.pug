@@ -16,54 +16,53 @@ html(lang="en")
     .ui.container 
       h1 Goods
 
-      table.ui.selectable.table
+      table.ui.sortable.celled.selectable.table
         thead 
           tr 
-            th Building 
-            th Goods n' Ingredients 
-            th Raw Materials
-        each building in buildings
+            th #
+            th Building
+            th Goods n' Ingredients
+            th(data-sortInitialOrder="desc")
+              img.ui.xmini.image(src="/images/coin.png")
+            each name in materialNames
+              th(data-sortInitialOrder="desc")
+                img.ui.xmini.image(src=getImage(name)) 
+        each building, buildingIndex in buildings
           if building.products
-            tbody 
-              each item, itemIndex in building.products
-                //- building name
-                if itemIndex === 0
-                  tr 
-                    td.top.aligned(rowspan=building.products.length+1)
-                      b #{building.name}
-                      img.ui.image.building-image(src=getImage(building.name))
-                //- product name
-                tr.top.aligned
+            each item, itemIndex in building.products
+              //- product name
+              tr.top.aligned
+                td #{buildingIndex}.#{itemIndex}
+                td #{building.name}
+                td(data-text=item.name)
+                  .ui.list
+                    .item
+                      img.ui.mini.image(src=getImage(item.name))
+                      .content
+                        .header #{item.name}
+                        .ui.middle.aligned.list
+                          each ingredient in item.ingredients
+                            .item
+                              img.ui.xmini.image(src=getImage(ingredient.name))
+                              .content #{ingredient.quantity} #{ingredient.name}
+                //- coin cost
+                td 
+                  .ui.middle.aligned.list
+                    .item
+                      img.ui.xmini.image(src="/images/coin.png")
+                      .content #{item.totalCost}
+                //- raw materials
+                each name in materialNames
                   td
-                    .ui.list
-                      .item
-                        img.ui.mini.image(src=getImage(item.name))
-                        .content
-                          .header #{item.name}
-                          .ui.middle.aligned.list
-                            each ingredient in item.ingredients
-                              .item
-                                img.ui.xmini.right.spaced.image(src=getImage(ingredient.name))
-                                .content
-                                  | #{ingredient.quantity} #{ingredient.name}
-                  //- base materials
-                  td 
-                    .ui.middle.aligned.list
-                      //- cost
-                      .item
-                        img.ui.xmini.image(src="/images/coin.png")
-                        .content
-                          | #{item.totalCost}
-                      //- base/raw materials
-                      each material in item.baseMaterials
+                    if item.rawMaterials[name] > 0
+                      .ui.middle.aligned.list
                         .item
-                          img.ui.xmini.image(src=getImage(material.name))
-                          .content
-                            | #{material.quantity} #{material.name}
-                  
+                          img.ui.xmini.image(src=getImage(name))
+                          .content #{item.rawMaterials[name]}
 
     script(src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.min.js", integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=", crossorigin="anonymous")
     script(src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js", integrity="sha256-CgSoWC9w5wNmI1aN8dIMK+6DPelUEtvDr+Bc2m/0Nx8=", crossorigin="anonymous")
     script(src="https://cdn.jsdelivr.net/npm/handlebars@4.7.7/dist/handlebars.min.js", integrity="sha256-ZSnrWNaPzGe8v25yP0S6YaMaDLMTDHC+4mHTw0xydEk=", crossorigin="anonymous")
+    script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.3/js/jquery.tablesorter.min.js", integrity="sha512-qzgd5cYSZcosqpzpn7zF2ZId8f/8CHmFKZ8j7mU4OUXTNRd5g+ZHBPsgKEwoqxCtdQvExE5LprwwPAgoicguNg==", crossorigin="anonymous", referrerpolicy="no-referrer")
     script(src="scripts.js")
 

@@ -18,24 +18,22 @@ body {
 }
 
 // Table
-.ui.table {
-  tbody,
-  tbody + tbody {
-    tr:first-child,
-    tr:nth-child(2) {
-      td {
-        border-top: 3px solid rgba(34, 36, 38, .1);
+.ui.sortable.table {
+  thead {
+    th {
+      &.tablesorter-header {
+        background-image: url(data:image/gif;base64,R0lGODlhFQAJAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAkAAAIXjI+AywnaYnhUMoqt3gZXPmVg94yJVQAAOw==);
+        background-repeat: no-repeat;
+        background-position: center right;
+      }
+
+      &.tablesorter-headerAsc {
+        background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjI8Bya2wnINUMopZAQA7);
+      }
+
+      &.tablesorter-headerDesc {
+        background-image: url(data:image/gif;base64,R0lGODlhFQAEAIAAACMtMP///yH5BAEAAAEALAAAAAAVAAQAAAINjB+gC+jP2ptn0WskLQA7);
       }
     }
-  }
-
-  tr:first-child td:first-child {
-    border-right: 1px solid rgba(34, 36, 38, .1);
-    width: 180px;
-  }
-
-  .ui.image.building-image {
-    max-width: 180px;
-    max-height: 180px;
   }
 }
