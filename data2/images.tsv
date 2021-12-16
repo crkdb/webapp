@@ -1,0 +1,101 @@
+name	image
+Lumberjack's Lodge	building/lumberjacks_lodge.png
+Jellybean Farm	building/jellybean_farm.png
+Sugar Quarry	building/sugar_quarry.png
+Windmill	building/windmill.png
+Jellyberry Orchard	building/jellyberry_orchard.png
+Milk Well	building/milk_well.png
+Cotton Candy Ranch	building/cotton_candy_ranch.png
+Smithy	building/smithy.png
+Jammery	building/jammery.png
+Carpentry Shop	building/carpentry.png
+Bakery	building/bakery.png
+Jampie Diner	building/jampie_diner.png
+Artisan's Workshop	building/artisans_workshop.png
+Flower Shop	building/flower_shop.png
+Dairy Factory	building/dairy_factory.png
+Latte Cafe	building/latte_cafe.png
+Toy Store	building/toy_store.png
+Barrel Inn	building/barrel_inn.png
+Maison du Cake	building/maison_du_cake.png
+Jewelry Salon	building/jewelry_salon.png
+	
+Roll Cake	material/wood_1.png
+Roll Cake Wood	material/wood_1.png
+Roll Cake Wood Bundle	material/wood_2.png
+Roll Cake Wood Pile	material/wood_3.png
+Jellybean	material/jellybean_1.png
+Jellybean Basket	material/jellybean_2.png
+Jellybean Crate	material/jellybean_3.png
+Sugar Cube	material/sugar_1.png
+Sugar Cube Pile	material/sugar_2.png
+Sugar Cube Cart	material/sugar_3.png
+Biscuit Flour	material/flour_1.png
+Biscuit Flour Sack	material/flour_2.png
+Biscuit Flour Cart	material/flour_3.png
+Jellyberry	material/berry_1.png
+Jellyberry Basket	material/berry_2.png
+Jellyberry Crate	material/berry_3.png
+Milk	material/milk_1.png
+Milk Barrel	material/milk_2.png
+Milk Crate	material/milk_3.png
+Cotton Candy Wool	material/cotton_candy_1.png
+Cotton Candy Wool Bolt	material/cotton_candy_2.png
+Cotton Candy Wool Crate	material/cotton_candy_3.png
+	
+Robust Axe	product/smithy/axe.png
+Tempered Pickaxe	product/smithy/pickaxe.png
+Candy Saw	product/smithy/saw.png
+Diggy Shovel	product/smithy/shovel.png
+Enchanted Stake	product/smithy/stake.png
+Enchanted Tongs	product/smithy/tongs.png
+Indestructible Glazed Hammer	product/smithy/hammer.png
+Jellybean Jam	product/jammery/jellybean_jam.png
+Sweet Jelly Jam	product/jammery/sweet_jelly_jam.png
+Toffe Jam	product/jammery/toffe_jam.png
+Pomegranate Jam	product/jammery/pomegranate_jam.png
+Sparkleberry Jam	product/jammery/sparkleberry_jam.png
+Pinecone Birdy Toy	product/carpentry/pinecone_birdy_toy.png
+Acorn Lamp	product/carpentry/acorn_lamp.png
+Cuckoo Clock	product/carpentry/cuckoo_clock.png
+Swan Feather Dreamcatcher	product/carpentry/swan_feather_dreamcatcher.png
+Hearty Rye	product/bakery/hearty_rye.png
+Tart Jampie	product/bakery/tart_jampie.png
+Ginkgo Focaccia	product/bakery/ginkgo_focaccia.png
+Glazed Donuts	product/bakery/glazed_donuts.png
+Fluffy Castella	product/bakery/fluffy_castella.png
+Golden Croissant	product/bakery/golden_croissant.png
+Hot Jelly Stew	product/jampie_diner/hot_jelly_stew.png
+Bear Jelly Burger	product/jampie_diner/bear_jelly_burger.png
+Candy Pasta	product/jampie_diner/candy_pasta.png
+Fluffy Omurice	product/jampie_diner/fluffy_omurice.png
+Jelly Deluxe Pizza	product/jampie_diner/jelly_deluxe_pizza.png
+Fancy Jellybean Meal	product/jampie_diner/fancy_jellybean_meal.png
+Biscuit Planter	product/artisans_workshop/biscuit_planter.png
+Shiny Glass	product/artisans_workshop/shiny_glass.png
+Gleamy Bead	product/artisans_workshop/gleamy_bead.png
+Colorful Bowl	product/artisans_workshop/colorful_bowl.png
+Candy Flower	product/flower_shop/candy_flower.png
+Happy Planter	product/flower_shop/happy_planter.png
+Candy Bouquet	product/flower_shop/candy_bouquet.png
+Lollipop Flower Basket	product/flower_shop/lollipop_flower_basket.png
+Bell-Flower Bouquet	product/flower_shop/bell-flower_bouquet.png
+Glittering Yogurt Wreath	product/flower_shop/glittering_yogurt_wreath.png
+Cream	product/dairy_factory/cream.png
+Butter	product/dairy_factory/butter.png
+Homemade Cheese	product/dairy_factory/homemade_cheese.png
+Jellybean Latte	product/latte_cafe/jellybean_latte.png
+Bubbly Boba	product/latte_cafe/bubbly_boba.png
+Sweetberry Juice	product/latte_cafe/sweetberry_juice.png
+Cloud Pillow	product/toy_store/cloud_pillow.png
+Bear Jelly Toy	product/toy_store/bear_jelly_toy.png
+Pitaya Dragon Toy	product/toy_store/pitaya_dragon_toy.png
+Cream Root Beer	product/barrel_inn/cream_root_beer.png
+Redberry Juice	product/barrel_inn/redberry_juice.png
+Vintage Root Bottle	product/barrel_inn/vintage_root_bottle.png
+Spooky Muffin	product/maison_du_cake/spooky_muffin.png
+Strawberry Cake	product/maison_du_cake/strawberry_cake.png
+Party Cake	product/maison_du_cake/party_cake.png
+Glazed Ring	product/jewelry_salon/glazed_ring.png
+Rubyberry Brooch	product/jewelry_salon/rubyberry_brooch.png
+Bear Jelly Crown	product/jewelry_salon/bear_jelly_crown.png

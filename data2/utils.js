@@ -1,17 +1,18 @@
 const fs = require('fs');
+const { sep } = require("path");
 const parseDuration = require('parse-duration');
 
 /**
  * @param {string} file 
  * @returns {string[][]}
  */
- function parseTSV(file) {
-  const data = fs.readFileSync(file, { encoding: 'utf-8' });
+ function parseTSV(dir, fileName) {
+  const data = fs.readFileSync(`${dir}${sep}${fileName}`, { encoding: 'utf-8' });
   const lines = data.split(/\s*\n\s*/);
   // remove headers line
   lines.shift()
-  // split tabs and trim spaces
-  return lines.map(line => line.split(/\t/).map(field => field.trim()));
+  // remove blank lines, split tabs, and trim spaces
+  return lines.filter(line => line).map(line => line.split(/\t/).map(field => field.trim()));
 }
 
 /**

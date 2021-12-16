@@ -32,30 +32,30 @@ html(lang="en")
                   tr 
                     td(rowspan=building.materials.length+1)
                       b #{building.name}
-                      img.ui.image.building-image(src=`/images/${building.image}`)
+                      img.ui.image.building-image(src=getImage(building.name))
                 tr
                   td
                     .ui.middle.aligned.list
                       .item
-                        img.ui.mini.image(src=`/images/${item.image}`)
+                        img.ui.mini.image(src=getImage(item.name))
                         .content
                           .header #{item.name}
                   td 
                     .ui.middle.aligned.list
                       .item
-                        img.ui.mini.image(src=`/images/${building.materials[0].image}`)
+                        img.ui.mini.image(src=getImage(building.materials[0].name))
                         .content
                           .header x#{item.quantity}
                   td
                     .ui.middle.aligned.list
                       .item
-                        img.ui.mini.image(src=`/images/clock.png`)
+                        img.ui.mini.image(src="/images/clock.png")
                         .content
                           .header #{item.time}
                   td
                     .ui.middle.aligned.list
                       .item
-                        img.ui.mini.image(src=`/images/clock.png`)
+                        img.ui.mini.image(src="/images/clock.png")
                         .content
                           .header #{item.timePerUnit}
 

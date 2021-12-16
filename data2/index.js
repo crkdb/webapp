@@ -1,5 +1,5 @@
-const { sep } = require("path");
 const { parseTSV, formatTime } = require('./utils');
+const { getImage } = require('./images');
 
 class Building {
   /**
@@ -8,8 +8,7 @@ class Building {
   constructor(fields) {
     this.id = Number.parseInt(fields[0]);
     this.name = fields[1];
-    this.image = fields[2];
-    this.limit = Number.parseInt(fields[3]);
+    this.limit = Number.parseInt(fields[2]);
   }
 }
 
@@ -33,12 +32,11 @@ class Material extends Resource {
 
     this.name = fields[2];
     this.single = fields[3];
-    this.image = fields[4];
 
-    this.cost = Number.parseInt(fields[6]);
-    this.quantity = Number.parseInt(fields[7]);
+    this.cost = Number.parseInt(fields[5]);
+    this.quantity = Number.parseInt(fields[6]);
 
-    const time = Number.parseInt(fields[5]);
+    const time = Number.parseInt(fields[4]);
     this.time = formatTime(time);    
     this.timePerUnit = formatTime(time / this.quantity);
   }
@@ -52,9 +50,8 @@ class Product extends Resource {
     super(Number.parseInt(fields[0]), Number.parseInt(fields[1]));
 
     this.name = fields[2];
-    this.image = fields[3];
-    this.time = fields[4];
-    this.ingredients = fields[5].split(/\s*,\s*/).map(line => {
+    this.time = fields[3];
+    this.ingredients = fields[4].split(/\s*,\s*/).map(line => {
       return new Ingredient(line);
     });
   }
@@ -71,15 +68,15 @@ class Ingredient {
   }
 }
 
-const buildings = parseTSV(`${__dirname}${sep}buildings.tsv`).map(fields => {
+const buildings = parseTSV(__dirname, 'buildings.tsv').map(fields => {
   return new Building(fields);
 });
 
-const materials = parseTSV(`${__dirname}${sep}materials.tsv`).map(fields => {
+const materials = parseTSV(__dirname, 'materials.tsv').map(fields => {
   return new Material(fields, buildings);
 });
 
-const products = parseTSV(`${__dirname}${sep}products.tsv`).map(fields => {
+const products = parseTSV(__dirname, 'products.tsv').map(fields => {
   return new Product(fields, buildings);
 });
 
@@ -156,6 +153,7 @@ function getBaseMaterialsRecurse(ingredient) {
   return baseMaterials;
 }
 
+exports.getImage = getImage;
 exports.buildings = buildings;
 exports.materials = materials;
 exports.products = products;

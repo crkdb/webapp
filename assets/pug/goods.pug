@@ -31,19 +31,19 @@ html(lang="en")
                   tr 
                     td.top.aligned(rowspan=building.products.length+1)
                       b #{building.name}
-                      img.ui.image.building-image(src=`/images/${building.image}`)
+                      img.ui.image.building-image(src=getImage(building.name))
                 //- product name
                 tr.top.aligned
                   td
                     .ui.list
                       .item
-                        img.ui.mini.image(src=`/images/${item.image}`)
+                        img.ui.mini.image(src=getImage(item.name))
                         .content
                           .header #{item.name}
                           .ui.middle.aligned.list
                             each ingredient in item.ingredients
                               .item
-                                img.ui.xmini.right.spaced.image(src=`/images/${ingredient.image}`)
+                                img.ui.xmini.right.spaced.image(src=getImage(ingredient.name))
                                 .content
                                   | #{ingredient.quantity} #{ingredient.name}
                   //- base materials
@@ -51,13 +51,13 @@ html(lang="en")
                     .ui.middle.aligned.list
                       //- cost
                       .item
-                        img.ui.xmini.image(src=`/images/coin.png`)
+                        img.ui.xmini.image(src="/images/coin.png")
                         .content
                           | #{item.totalCost}
                       //- base/raw materials
                       each material in item.baseMaterials
                         .item
-                          img.ui.xmini.image(src=`/images/${material.image}`)
+                          img.ui.xmini.image(src=getImage(material.name))
                           .content
                             | #{material.quantity} #{material.name}
                   

@@ -1,21 +1,21 @@
-id	name	image	limit	queue limit
-1	Lumberjack's Lodge	building/lumberjacks_lodge.png	2	8
-2	Jellybean Farm	building/jellybean_farm.png	2	8
-3	Sugar Quarry	building/sugar_quarry.png	2	8
-4	Windmill	building/windmill.png	2	7
-5	Jellyberry Orchard	building/jellyberry_orchard.png	2	7
-6	Milk Well	building/milk_well.png	2	6
-7	Cotton Candy Ranch	building/cotton_candy_ranch.png	2	6
-8	Smithy	building/smithy.png	2	
-9	Jammery	building/jammery.png	2	
-10	Carpentry Shop	building/carpentry.png	2	
-11	Bakery	building/bakery.png	2	
-12	Jampie Diner	building/jampie_diner.png	2	
-13	Artisan's Workshop	building/artisans_workshop.png	2	
-14	Flower Shop	building/flower_shop.png	2	
-15	Dairy Factory	building/dairy_factory.png	2	
-16	Latte Cafe	building/latte_cafe.png	2	
-17	Toy Store	building/toy_store.png	2	
-18	Barrel Inn	building/barrel_inn.png	1	
-19	Maison du Cake	building/maison_du_cake.png	1	
-20	Jewelry Salon	building/jewelry_salon.png	1	
+id	name	limit	queue limit
+1	Lumberjack's Lodge	2	8
+2	Jellybean Farm	2	8
+3	Sugar Quarry	2	8
+4	Windmill	2	7
+5	Jellyberry Orchard	2	7
+6	Milk Well	2	6
+7	Cotton Candy Ranch	2	6
+8	Smithy	2	
+9	Jammery	2	
+10	Carpentry Shop	2	
+11	Bakery	2	
+12	Jampie Diner	2	
+13	Artisan's Workshop	2	
+14	Flower Shop	2	
+15	Dairy Factory	2	
+16	Latte Cafe	2	
+17	Toy Store	2	
+18	Barrel Inn	1	
+19	Maison du Cake	1	
+20	Jewelry Salon	1	

@@ -1,22 +1,22 @@
-id	building	name	single	image	time	cost	quantity
-1	1	Roll Cake Wood	Roll Cake	material/wood_1.png	30	30	3
-2	1	Roll Cake Wood Bundle	Roll Cake	material/wood_2.png	360	90	9
-3	1	Roll Cake Wood Pile	Roll Cake	material/wood_3.png	5400	200	20
-4	2	Jellybean	Jellybean	material/jellybean_1.png	60	50	3
-5	2	Jellybean Basket	Jellybean	material/jellybean_2.png	720	150	9
-6	2	Jellybean Crate	Jellybean	material/jellybean_3.png	6000	340	20
-7	3	Sugar Cube	Sugar Cube	material/sugar_1.png	90	80	3
-8	3	Sugar Cube Pile	Sugar Cube	material/sugar_2.png	840	240	9
-9	3	Sugar Cube Cart	Sugar Cube	material/sugar_3.png	6300	540	20
-10	4	Biscuit Flour	Biscuit Flour	material/flour_1.png	1080	200	3
-11	4	Biscuit Flour Sack	Biscuit Flour	material/flour_2.png	2400	600	9
-12	4	Biscuit Flour Cart	Biscuit Flour	material/flour_3.png	8100	1340	20
-13	5	Jellyberry	Jellyberry	material/berry_1.png	600	500	2
-14	5	Jellyberry Basket	Jellyberry	material/berry_2.png	1500	1500	6
-15	5	Jellyberry Crate	Jellyberry	material/berry_3.png	7200	3000	12
-16	6	Milk	Milk	material/milk_1.png	1680	700	2
-17	6	Milk Barrel	Milk	material/milk_2.png	7200	1750	5
-18	6	Milk Crate	Milk	material/milk_3.png	12600	2800	8
-19	7	Cotton Candy Wool	Cotton Candy Wool	material/cotton_candy_1.png	5400	1000	1
-20	7	Cotton Candy Wool Bolt	Cotton Candy Wool	material/cotton_candy_2.png	11100	2000	2
-21	7	Cotton Candy Wool Crate	Cotton Candy Wool	material/cotton_candy_3.png	17100	3000	3
+id	building	name	single	time	cost	quantity
+1	1	Roll Cake Wood	Roll Cake	30	30	3
+2	1	Roll Cake Wood Bundle	Roll Cake	360	90	9
+3	1	Roll Cake Wood Pile	Roll Cake	5400	200	20
+4	2	Jellybean	Jellybean	60	50	3
+5	2	Jellybean Basket	Jellybean	720	150	9
+6	2	Jellybean Crate	Jellybean	6000	340	20
+7	3	Sugar Cube	Sugar Cube	90	80	3
+8	3	Sugar Cube Pile	Sugar Cube	840	240	9
+9	3	Sugar Cube Cart	Sugar Cube	6300	540	20
+10	4	Biscuit Flour	Biscuit Flour	1080	200	3
+11	4	Biscuit Flour Sack	Biscuit Flour	2400	600	9
+12	4	Biscuit Flour Cart	Biscuit Flour	8100	1340	20
+13	5	Jellyberry	Jellyberry	600	500	2
+14	5	Jellyberry Basket	Jellyberry	1500	1500	6
+15	5	Jellyberry Crate	Jellyberry	7200	3000	12
+16	6	Milk	Milk	1680	700	2
+17	6	Milk Barrel	Milk	7200	1750	5
+18	6	Milk Crate	Milk	12600	2800	8
+19	7	Cotton Candy Wool	Cotton Candy Wool	5400	1000	1
+20	7	Cotton Candy Wool Bolt	Cotton Candy Wool	11100	2000	2
+21	7	Cotton Candy Wool Crate	Cotton Candy Wool	17100	3000	3
